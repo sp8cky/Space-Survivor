@@ -22,7 +22,7 @@ This project is a simple implementation of the classic arcade game Space Invader
 - Feedback and Contributions: I haven't been working with Unity for that long, Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request on GitHub.
 
 ## Getting Started:
-- Clone or download the project repository from [[git@github.com:sp8cky/Space-Survivor.git]].
+- Clone or download the project repository from [git@github.com:sp8cky/Space-Survivor.git](https://github.com/sp8cky/Space-Survivor)
 - Open the project in Unity.
 - Explore the scripts and scene files to understand the project structure and gameplay mechanics.
 - Make adjustments or modifications as desired to customize the game.
