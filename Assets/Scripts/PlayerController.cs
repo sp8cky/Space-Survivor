@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour {
     public float speed = 5f;
     private int maxHealth = 3;
     private int currentHealth;
-    public GameObject bulletPrefab; // Prefab bullet
-    public float shootSpeed = 10f; // Bullet speed
+    public GameObject bulletPrefab;
+    public float shootSpeed = 10f;
 
 
     private void Start() {
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = new Vector3(inputX, 0f, 0f) * speed * Time.deltaTime;
         transform.Translate(movement);
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
             Debug.Log("pressed");
             ShootBullet();
         }
@@ -42,12 +42,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     // HEALTH
-    void LoseHealth(int amount) {
+    public void LoseHealth(int amount) {
         currentHealth -= amount;
 
-        if (currentHealth <= 0) {
-            GameManager.instance.PlayerDied();
-        }
+        if (currentHealth <= 0) GameManager.instance.PlayerDied();
     }
     
     public int GetCurrentHealth() {

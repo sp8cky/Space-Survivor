@@ -8,20 +8,25 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
     public UIManager uiManager;
     private int score = 0;
+    private int highScore = 0;
+    
 
     void Awake() {
         // Create singleton-instanz
         if (instance == null) {
             instance = this;
-        }
-        else {
+        } else {
             Destroy(gameObject);
         }
+
+        // Load high score from PlayerPrefs
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
     }
 
     public void PlayerDied() {
         Debug.Log("Player died!");
-        RestartLevel();
+        UpdateHighScore();
+        MenuController.instance.LoadGameOverScene(); //RestartLevel();
     }
 
     // Restarting level
@@ -40,5 +45,19 @@ public class GameManager : MonoBehaviour {
     // Get current score method (optional)
     public int GetScore() {
         return score;
+    }
+
+    // Check and update high score
+    void UpdateHighScore() {
+        if (score > highScore) {
+            highScore = score;
+            PlayerPrefs.SetInt("HighScore", highScore); // Save high score to PlayerPrefs
+            PlayerPrefs.Save(); // Save PlayerPrefs
+            uiManager.UpdateHighScoreText(highScore); // Update UI with new high score
+        }
+    }
+
+    public int GetHighScore() {
+        return highScore;
     }
 }
