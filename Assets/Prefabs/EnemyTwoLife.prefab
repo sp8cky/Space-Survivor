@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7337458059664373785}
   - component: {fileID: 8310545556333034764}
   - component: {fileID: 5041269899966454749}
-  - component: {fileID: 627766738396200870}
+  - component: {fileID: 6443033391990063525}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyTwoLife
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -3.92, y: 1.8058019, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2f4e3b74dac4ce84e9e1f446291f65b4, type: 2}
+  - {fileID: 2100000, guid: 41c78afc5b7768e409a8960dbb8f8fff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &627766738396200870
+--- !u!114 &6443033391990063525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6135158776355657399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 478a859fbb37282438883fd253997bc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 679422de256ebf543a1e04e51f3a9973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 2
