@@ -6,8 +6,8 @@ public class EnemyTwoLifeController : EnemyController {
     // TODO: fix, that EnemyTwoLifeController has two lifes
 
     protected override void Start() {
-        this.maxHealth = 2;
         base.Start();
+        maxHealth = 2;
         Debug.Log("HEALTH: " + this.maxHealth);
     }
 }
