@@ -8,7 +8,7 @@ This project is a simple implementation of the classic arcade game Space Invader
 - Player shooting: Press the spacebar to shoot bullets and destroy enemy invaders.
 - Enemy invaders: Enemy units move horizontally and descend gradually towards the player. 
 - Score system: Players earn points by shooting down enemy invaders. The current score is displayed on the screen.
-- Health system: Players start with a certain amount of health. Colliding with enemy invaders decreases health, and when health reaches zero, the game ends.
+- Health system: Players start with a certain amount of health. Player can gain and loose health to collision with items or enemies and when health reaches zero, the game ends.
 
 ## Customization Options:
 - Adjust player movement speed: Players can tweak the movement speed of the player character in the PlayerController script.
