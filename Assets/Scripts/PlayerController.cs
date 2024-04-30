@@ -44,8 +44,12 @@ public class PlayerController : MonoBehaviour {
     // HEALTH
     public void LoseHealth(int amount) {
         currentHealth -= amount;
-
         if (currentHealth <= 0) GameManager.instance.PlayerDied();
+    }
+
+    public void GainHealth(int amount) {
+        currentHealth += amount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
     }
     
     public int GetCurrentHealth() {

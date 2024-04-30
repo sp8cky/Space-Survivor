@@ -6,19 +6,38 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
 
     public List<GameObject> objectsToSpawn;
-    private float interval = 2;
-    float timer;
+    public float interval = 2;
+    public float healthItemSpawnChance = 0.3f;
+    private float timer;
+
+    public GameObject healthItemPrefab;
 
     void Update() {
         timer += Time.deltaTime;
         if (timer >= interval) {
-            // Random choice of object list
-            int randomIndex = UnityEngine.Random.Range(0, objectsToSpawn.Count);
-            GameObject objectPrefab = objectsToSpawn[randomIndex];
+            // random object to spawn
+            GameObject objectPrefab = GetRandomObjectToSpawn();
 
-            // Instantiate object
+            // Spawnen des Objekts
             Instantiate(objectPrefab, transform.position + new Vector3(UnityEngine.Random.Range(-10, 10), 0, 0), objectPrefab.transform.rotation);
             timer -= interval;
+
+            // Check if health item should be spawned
+            if (UnityEngine.Random.value < healthItemSpawnChance) {
+                GameObject healthItemPrefab = GetHealthItemPrefab();
+                Instantiate(healthItemPrefab, transform.position + new Vector3(UnityEngine.Random.Range(-10, 10), 0, 0), healthItemPrefab.transform.rotation);
+            }
         }
     }
+
+    // Random choice of object from list
+    private GameObject GetRandomObjectToSpawn() {
+        int randomIndex = UnityEngine.Random.Range(0, objectsToSpawn.Count);
+        return objectsToSpawn[randomIndex];
+    }
+
+    private GameObject GetHealthItemPrefab() {
+        return healthItemPrefab;
+    }
+
 }
