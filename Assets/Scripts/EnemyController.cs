@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour {
 
     protected virtual void Start() {
         playerController = FindObjectOfType<PlayerController>();
+        maxHealth = 1;
         currentHealth = maxHealth;
     }
     
