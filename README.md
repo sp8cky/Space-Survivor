@@ -1,7 +1,7 @@
 # Space-Survivor
 
 ## Concept
-This project is a simple implementation of the classic arcade game Space Invaders using Unity, it's still in progress.
+This project is a simple implementation of the classic arcade game Space Invaders using Unity, see *Project status* for more information.
 
 ## Implemented Features:
 - Player movement: Control the player character using the left and right arrow keys.
@@ -10,14 +10,16 @@ This project is a simple implementation of the classic arcade game Space Invader
 - Score system: Players earn points by shooting down enemy invaders. The current score is displayed on the screen.
 - Health system: Players start with a certain amount of health. Player can gain and loose health to collision with items or enemies and when health reaches zero, the game ends.
 
-
 ## Important Notes:
 - Unity Version: This project was developed using Unity LTS version 2022.3.26f1.
 - Compatibility: The game is designed for 2D gameplay and is compatible with both desktop and mobile platforms.
 - Code Structure: The project follows a modular code structure, making it easy to understand and extend. Scripts are organized into logical components such as PlayerController, EnemyController, and GameManager.
 - Feedback and Contributions: I haven't been working with Unity for that long, Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request on GitHub.
 
-## Future Features
+## Project status
+- Still in progress
+
+### Future implementations
 - new Enemy-Types, attacks
 - Better UI
 - ...
@@ -38,7 +40,9 @@ This project is a simple implementation of the classic arcade game Space Invader
 - This project was created by sp8cky.
 
 ### Packages and Assets
-- I used , thanks for those packages!
+- I used the following packages and assets, thanks for those packages!
+- Galaxia 2D Space Shooter Sprite Pack #1 by Josh Marshall (https://assetstore.unity.com/packages/2d/textures-materials/galaxia-2d-space-shooter-sprite-pack-1-64944)
+- Dynamic Space Background Lite by DinV Studio (https://assetstore.unity.com/packages/2d/textures-materials/dynamic-space-background-lite-104606)
 
 ## License:
 - This project is licensed under the MIT-License. See the LICENSE file for details.
