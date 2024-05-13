@@ -3,28 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-
-    public float speed = 5f;
-    private int maxHealth = 3;
-    private int currentHealth;
     public GameObject bulletPrefab;
+    public float speed = 5f;
     public float shootSpeed = 10f;
+    private int maxHealth;
+    private int currentHealth;
 
-
-    private void Start() {
-        currentHealth = maxHealth;
-    }
+    void Start() { maxHealth = GameManager.instance.GetPlayerHealth(); }
 
     void Update() {
         float inputX = Input.GetAxis("Horizontal");
-
         Vector3 movement = new Vector3(inputX, 0f, 0f) * speed * Time.deltaTime;
         transform.Translate(movement);
+        if (Input.GetKeyDown(KeyCode.Mouse0)) ShootBullet(); // Shoot
+    }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            Debug.Log("pressed");
-            ShootBullet();
-        }
+    public void GainHealth(int amount) {
+        currentHealth += amount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        GameManager.instance.IncreasePlayerHealth(amount);
+    }
+
+    public void IncreaseAttackSpeed(int amount) { shootSpeed += amount; }
+    
+    public void LoseHealth(int amount) {
+        currentHealth -= amount;
+        GameManager.instance.DecreasePlayerHealth(amount);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
@@ -41,28 +45,9 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    // HEALTH
-    public void LoseHealth(int amount) {
-        currentHealth -= amount;
-        if (currentHealth <= 0) GameManager.instance.PlayerDied();
-    }
-
-    public void GainHealth(int amount) {
-        currentHealth += amount;
-        if (currentHealth > maxHealth) currentHealth = maxHealth;
-    }
-    
-    public int GetCurrentHealth() {
-        return currentHealth; 
-    }
-
-    // SHOOT
     void ShootBullet() {
-        // Player position
-        Vector3 playerPosition = transform.position;
-
-        // Create an instance of the ball at the player's position
-        GameObject bullet = Instantiate(bulletPrefab, playerPosition + new Vector3(0f, 1f, 0f), Quaternion.identity);
+        // Create an instance of the ball at the player's position (transform.position)
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
         
         // Add a force to shoot the ball upwards
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();

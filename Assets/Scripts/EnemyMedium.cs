@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTwoLifeController : EnemyController {
+// cild enemy class, this is medium enemy
+public class EnemyMedium : EnemyController {
 
     protected override void Start() {
         base.Start();

@@ -440,9 +440,11 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 6135158776355657399, guid: a0e11774f84fcaf458ad447d8b197a6f, type: 3}
   - {fileID: 6135158776355657399, guid: 29afdc23438c6424e9f5989511a84f84, type: 3}
+  itemsToSpawn:
+  - {fileID: 2514713797135181588, guid: cf77508fd1339354784895f4ec729694, type: 3}
+  - {fileID: 3360156296583948187, guid: 03de08569bf26ef44af949307635b670, type: 3}
   interval: 2
-  healthItemSpawnChance: 0.1
-  healthItemPrefab: {fileID: 2514713797135181588, guid: cf77508fd1339354784895f4ec729694, type: 3}
+  itemSpawnChance: 0.3
 --- !u!4 &496590733
 Transform:
   m_ObjectHideFlags: 0
@@ -724,8 +726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666aa0b54da70744fa7a5bc50bcb0717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
   bulletPrefab: {fileID: 5127629669769651976, guid: c699f8787da1b2243aace8cefb14498f, type: 3}
+  speed: 8
   shootSpeed: 10
 --- !u!1 &729068152
 GameObject:

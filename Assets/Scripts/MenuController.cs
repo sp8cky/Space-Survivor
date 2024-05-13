@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour {
-
     public static MenuController instance; // Singleton instance of the MenuController for easy access from anywhere in the game 
 
     void Awake() {
@@ -15,18 +14,20 @@ public class MenuController : MonoBehaviour {
             Destroy(gameObject);
         }
     }
-
-    public void StartGame() {
-        Debug.Log("StartGame()");
-        SceneManager.LoadScene("Level01");
-    }
-    public void LoadGameOverScene() {
-        Debug.Log("LoadGameOverScene()");
-        SceneManager.LoadScene("GameOver");
-    }
+    
     public void LoadMainMenuScene() {
         Debug.Log("LoadMainMenuScene()");
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void StartFirstLevel() {
+        Debug.Log("StartFirstLevel()");
+        SceneManager.LoadScene("Level01");
+    }
+
+    public void LoadGameOverScene() {
+        Debug.Log("LoadGameOverScene()");
+        SceneManager.LoadScene("GameOver");
     }
 
     public void Quit() {

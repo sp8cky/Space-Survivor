@@ -6,30 +6,18 @@ using TMPro;
 
 
 public class UIManager : MonoBehaviour {
-    private PlayerController playerController;
     public TMP_Text healthText;
     public TMP_Text scoreText;
     public TMP_Text highScoreText;
     
     void Start() {
-        playerController = FindObjectOfType<PlayerController>();
-        
-        // Errorcatch
-        if (playerController == null) Debug.LogWarning("UIManager: PlayerController not found");
         scoreText.text = "Score: 0";
-        UpdateHighScoreText(GameManager.instance.GetHighScore());
-    }
-
-    void Update() {
-        // Update the health display based on the player's current health points
-        if (playerController != null) healthText.text = "Health: " + playerController.GetCurrentHealth().ToString();
+        healthText.text = "Health: " + 3.ToString();
+        UpdateHighScoreText(GameManager.instance.GetPlayerHighScore());
     }
 
     // Update score and highscore text methods
-    public void UpdateScoreText(int score) {
-        scoreText.text = "Score: " + score.ToString();
-    }
-    public void UpdateHighScoreText(int highScore) {
-        highScoreText.text = "High Score: " + highScore.ToString();
-    }
+    public void UpdateScoreText(int score) { scoreText.text = "Score: " + score.ToString(); }
+    public void UpdateHighScoreText(int highScore) { highScoreText.text = "High Score: " + highScore.ToString(); }
+    public void UpdatePlayerHealthText(int health) { healthText.text = "Health: " + health.ToString(); }
 }

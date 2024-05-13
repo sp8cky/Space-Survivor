@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8310545556333034764}
   - component: {fileID: 627766738396200870}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyBasic
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,4 +147,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 478a859fbb37282438883fd253997bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 2

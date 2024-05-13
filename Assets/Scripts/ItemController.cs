@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthItemController : MonoBehaviour{
+public class ItemController : MonoBehaviour {
     public float fallSpeed = 4f; 
 
     private Rigidbody2D rb;
