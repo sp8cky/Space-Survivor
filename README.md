@@ -12,7 +12,7 @@ This project is a simple implementation of the classic arcade game Space Invader
 
 ## Important Notes:
 - Unity Version: This project was developed using Unity LTS version 2022.3.26f1.
-- Compatibility: The game is designed for 2D gameplay and is compatible with both desktop and mobile platforms.
+- Compatibility: The game is designed for 2D gameplay and is compatible with desktop platforms.
 - Code Structure: The project follows a modular code structure, making it easy to understand and extend. Scripts are organized into logical components such as PlayerController, EnemyController, and GameManager.
 - Feedback and Contributions: I haven't been working with Unity for that long, Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request on GitHub.
 
