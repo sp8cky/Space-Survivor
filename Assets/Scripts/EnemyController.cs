@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour {
 
     protected virtual void Start() {
         playerController = FindObjectOfType<PlayerController>();
+        if (playerController == null) Debug.LogError("PlayerController not found!");
         maxHealth = 1;
         currentHealth = maxHealth;
 

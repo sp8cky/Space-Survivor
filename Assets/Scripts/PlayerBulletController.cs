@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PlayerBulletController : MonoBehaviour {
     private PlayerController playerController;
+
     void Start() {
         playerController = FindObjectOfType<PlayerController>();
+        if (playerController == null) Debug.LogError("PlayerController not found!");
     }
+
     private void OnCollisionEnter2D(Collision2D other) {
-        // collision detection when bullet hits a wall -> bullet gets destroyed
+        // collision detection when bullet hits a wall
         if (other.gameObject.CompareTag("Wall")) {
             Debug.Log("Collision Bullet with Wall");
             Destroy(gameObject);
@@ -21,18 +24,26 @@ public class PlayerBulletController : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        // Collision detection when bullet hits a health item
-        if (other.gameObject.CompareTag("HealthItem")) {
+        // Collision detection with health item
+        if (other.gameObject.name.Contains("HealthItem")) {
             Debug.Log("Collision Bullet with Health Item");
-            if (playerController != null) playerController.GainHealth(1);
+            playerController.GainHealth(1);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
 
-        // Collision detection when bullet hits a shoot item
-        if (other.gameObject.CompareTag("ShootItem")) {
+        // Collision detection with shoot item
+        if (other.gameObject.name.Contains("ShootItem")) {
             Debug.Log("Collision Bullet with Shoot Item");
-            if (playerController != null) playerController.IncreaseAttackSpeed(2);
+            playerController.IncreaseAttackSpeed(3);
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+
+        // Collision detection with speed item
+        if (other.gameObject.name.Contains("SpeedItem")) {
+            Debug.Log("Collision Bullet with Speed Item");
+            playerController.IncreasePlayerSpeed(8);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

@@ -6,9 +6,21 @@ using TMPro;
 
 
 public class UIManager : MonoBehaviour {
+    public static UIManager instance; 
     public TMP_Text healthText;
     public TMP_Text scoreText;
     public TMP_Text highScoreText;
+    public TMP_Text speedText;
+    public TMP_Text shootText;
+
+    void Awake() {
+        // Create singleton-instanz
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+    }
     
     void Start() {
         scoreText.text = "Score: 0";
@@ -17,7 +29,9 @@ public class UIManager : MonoBehaviour {
     }
 
     // Update score and highscore text methods
-    public void UpdateScoreText(int score) { scoreText.text = "Score: " + score.ToString(); }
-    public void UpdateHighScoreText(int highScore) { highScoreText.text = "High Score: " + highScore.ToString(); }
-    public void UpdatePlayerHealthText(int health) { healthText.text = "Health: " + health.ToString(); }
+    public void UpdateScoreText(float score) { scoreText.text = "Score: " + score.ToString(); }
+    public void UpdateHighScoreText(float highScore) { highScoreText.text = "High Score: " + highScore.ToString(); }
+    public void UpdatePlayerHealthText(float health) { healthText.text = "Health: " + health.ToString(); }
+    public void UpdateSpeedText(float time) { healthText.text = "Remaining: " + time.ToString(); }
+    public void UpdateShootText(float time) { healthText.text = "Remaining: " + time.ToString(); }
 }

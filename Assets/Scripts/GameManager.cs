@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-    public static GameManager instance; // Singleton instance of the GameManager for easy access from anywhere in the game 
-    public UIManager uiManager;
-    private int score;
-    private int highScore;
-    private int playerHealth;
+    public static GameManager instance; 
+    private float score;
+    private float highScore;
+    private float playerMaxHealth = 3;
+    private float currentPlayerHealth;
     
     void Awake() {
         // Create singleton-instanz
@@ -21,54 +21,48 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         score = 0;
-        playerHealth = 3;
+        currentPlayerHealth = playerMaxHealth;
         highScore = PlayerPrefs.GetInt("HighScore", 0); // Load high score from PlayerPrefs
-        uiManager.UpdateHighScoreText(highScore);
+        UIManager.instance.UpdateHighScoreText(highScore);
     }
 
-    public void DecreasePlayerHealth(int amount) {
-        playerHealth -= amount;
-        if (uiManager != null) uiManager.UpdatePlayerHealthText(playerHealth);
-        if (playerHealth <= 0) PlayerDied();
+    // HEALTH //////////////////////////////////////////////////////////////////////////////
+    public float GetPlayerHealth() { return currentPlayerHealth; }
+
+    public void IncreasePlayerHealth(float amount) {
+        currentPlayerHealth += amount;
+        if (currentPlayerHealth > 3) currentPlayerHealth = playerMaxHealth;
+        UIManager.instance.UpdatePlayerHealthText(currentPlayerHealth);
     }
 
-    // Increase score method
-    public void IncreaseScore(int amount) {
-        score += amount;
-        uiManager.UpdateScoreText(score);
+    public void DecreasePlayerHealth(float amount) {
+        currentPlayerHealth -= amount;
+        UIManager.instance.UpdatePlayerHealthText(currentPlayerHealth = 0);
     }
-
-    public void IncreasePlayerHealth(int amount) {
-        playerHealth += amount;
-        if (uiManager != null) uiManager.UpdatePlayerHealthText(playerHealth);
-    }
-
-    // Getter
-    public int GetPlayerScore() { return score; }
-    public int GetPlayerHealth() { return playerHealth; }
-    public int GetPlayerHighScore() { return highScore; }
-
+    
     // Player died when health is 0
     public void PlayerDied() {
         Debug.Log("Player died!");
         UpdateHighScore();
         MenuController.instance.LoadGameOverScene(); 
     }
-    
-    // Restarting level
-    void RestartLevel() {
-        Debug.Log("RestartLevel()");
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
+
+    // SCORE //////////////////////////////////////////////////////////////////////////////
+    public float GetPlayerHighScore() { return highScore; }
+
+    // Increase score method
+    public void IncreaseScore(float amount) {
+        score += amount;
+        UIManager.instance.UpdateScoreText(score);
     }
 
     // Check and update high score
     void UpdateHighScore() {
         if (score > highScore) {
             highScore = score;
-            PlayerPrefs.SetInt("HighScore", highScore); // Save high score to PlayerPrefs
+            PlayerPrefs.SetInt("HighScore", (int)highScore); // Save high score to PlayerPrefs
             PlayerPrefs.Save(); // Save PlayerPrefs
-            if (uiManager != null) uiManager.UpdateHighScoreText(highScore); // Update UI with new high score
+            UIManager.instance.UpdateHighScoreText(highScore); // Update UI with new high score
         }
     }
    
