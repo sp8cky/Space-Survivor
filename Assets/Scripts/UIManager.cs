@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
 public class UIManager : MonoBehaviour {
     public static UIManager instance; 
     public TMP_Text healthText;
@@ -24,7 +23,7 @@ public class UIManager : MonoBehaviour {
     
     void Start() {
         scoreText.text = "Score: 0";
-        healthText.text = "Health: " + 3.ToString();
+        healthText.text = "Health: " + GameManager.instance.GetPlayerMaxHealth().ToString();
         UpdateHighScoreText(GameManager.instance.GetPlayerHighScore());
     }
 
@@ -32,6 +31,6 @@ public class UIManager : MonoBehaviour {
     public void UpdateScoreText(float score) { scoreText.text = "Score: " + score.ToString(); }
     public void UpdateHighScoreText(float highScore) { highScoreText.text = "High Score: " + highScore.ToString(); }
     public void UpdatePlayerHealthText(float health) { healthText.text = "Health: " + health.ToString(); }
-    public void UpdateSpeedText(float time) { healthText.text = "Remaining: " + time.ToString(); }
-    public void UpdateShootText(float time) { healthText.text = "Remaining: " + time.ToString(); }
+    public void UpdateSpeedText(float time) { speedText.text = time >= 0 ? "Remaining: " + time.ToString("F0") : ""; }
+    public void UpdateShootText(float time) { shootText.text = time >= 0 ? "Remaining: " + time.ToString("F0") : ""; }
 }

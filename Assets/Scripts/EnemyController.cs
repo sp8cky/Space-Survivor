@@ -20,7 +20,9 @@ public class EnemyController : MonoBehaviour {
         rb.bodyType = RigidbodyType2D.Kinematic; // dont get affected by physics
     }
 
-    protected virtual void Update() { rb.velocity = new Vector2(0, -fallSpeed); }
+    protected virtual void Update() { 
+        rb.velocity = new Vector2(0, -fallSpeed); 
+    }
 
     // enemy hits wall -> player loses health
     protected virtual void OnTriggerEnter2D(Collider2D other) {

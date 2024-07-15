@@ -544,8 +544,8 @@ MonoBehaviour:
   healthText: {fileID: 822984351}
   scoreText: {fileID: 46663471}
   highScoreText: {fileID: 1849390443}
-  speedText: {fileID: 0}
-  shootText: {fileID: 0}
+  speedText: {fileID: 872415770}
+  shootText: {fileID: 223002608}
 --- !u!1 &496590731
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5127629669769651976, guid: c699f8787da1b2243aace8cefb14498f, type: 3}
-  speed: 8
+  moveSpeed: 5
   shootSpeed: 10
   fireRate: 1
 --- !u!1 &729068152

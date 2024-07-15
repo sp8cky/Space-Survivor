@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance; 
     private float score;
     private float highScore;
-    private float playerMaxHealth = 3;
+    private float playerMaxHealth = 10;
     private float currentPlayerHealth;
     
     void Awake() {
@@ -27,17 +27,22 @@ public class GameManager : MonoBehaviour {
     }
 
     // HEALTH //////////////////////////////////////////////////////////////////////////////
-    public float GetPlayerHealth() { return currentPlayerHealth; }
+    public float GetPlayerCurrentHealth() { return currentPlayerHealth; }
+    public float GetPlayerMaxHealth() { return playerMaxHealth; }
 
     public void IncreasePlayerHealth(float amount) {
         currentPlayerHealth += amount;
-        if (currentPlayerHealth > 3) currentPlayerHealth = playerMaxHealth;
+        if (currentPlayerHealth > playerMaxHealth) currentPlayerHealth = playerMaxHealth;
         UIManager.instance.UpdatePlayerHealthText(currentPlayerHealth);
     }
 
     public void DecreasePlayerHealth(float amount) {
         currentPlayerHealth -= amount;
-        UIManager.instance.UpdatePlayerHealthText(currentPlayerHealth = 0);
+        UIManager.instance.UpdatePlayerHealthText(currentPlayerHealth);
+        if (currentPlayerHealth <= 0) {
+            PlayerDied();
+            UIManager.instance.UpdatePlayerHealthText(currentPlayerHealth);
+        }
     }
     
     // Player died when health is 0
