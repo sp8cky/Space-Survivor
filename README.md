@@ -1,6 +1,6 @@
 # Space-Survivor
 
-This project is a simple implementation of the classic arcade game Space Invaders using Unity, see [Project Status](#Implemented-Features) for more information.
+This project is a simple implementation of the classic arcade game Space Invaders using Unity, see [Project Status](#project-status) for more information.
 
 ## Table of Contents
 
