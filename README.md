@@ -20,12 +20,10 @@ This project is a simple implementation of the classic arcade game Space Invader
 - Health system: Players start with a certain amount of health. Player can gain and loose health to collision with items or enemies and when health reaches zero, the game ends.
 
 
-- ### Project status
-
+### Project status
 - Still in progress
 
-- ### Future implementations
-
+### Future implementations
 - new Enemy-Types, attacks
 - Better UI
 - ...
@@ -48,13 +46,12 @@ git clone https://github.com/sp8cky/Space-Survivor
 ```
 
 ### Customization Options:
-
 - Code Structure: The project follows a modular code structure, making it easy to understand and extend. Scripts are organized into logical components such as PlayerController, EnemyController, and GameManager.
 - Adjust player movement speed: Players can tweak the movement speed of the player character in the PlayerController script.
 - Modify enemy behavior: Users can customize various aspects of the enemy behavior, such as movement speed, spawn rate, and attack patterns, by adjusting parameters in the EnemyController script.
 - Change game visuals: Users can replace the default sprites with their own artwork to customize the game's appearance.
 
-- ## Contributing
+## Contributing
 - Feedback and Contributions: I haven't been working with Unity for that long, Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request on GitHub.
 
 ### How to Contribute
