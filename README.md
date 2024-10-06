@@ -37,12 +37,9 @@ This project is a simple implementation of the classic arcade game Space Invader
 
 
 ### Installation Steps
-
+Clone the repository and add it to Unity Hub
 ```bash
-# Clone the repository
 git clone https://github.com/sp8cky/Space-Survivor
-
-# Add your directory to Unity Hub
 ```
 
 ### Customization Options:
@@ -52,7 +49,7 @@ git clone https://github.com/sp8cky/Space-Survivor
 - Change game visuals: Users can replace the default sprites with their own artwork to customize the game's appearance.
 
 ## Contributing
-- Feedback and Contributions: I haven't been working with Unity for that long, Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request on GitHub.
+- Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request on GitHub.
 
 ### How to Contribute
 1. Fork the repository
