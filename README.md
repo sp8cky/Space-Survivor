@@ -66,6 +66,6 @@ git clone https://github.com/sp8cky/Space-Survivor
 
 ## Acknowledgments
 - I used the following packages and assets, thanks for those packages!
-- Galaxia 2D Space Shooter Sprite Pack #1 by Josh Marshall (https://assetstore.unity.com/packages/2d/textures-materials/galaxia-2d-space-shooter-sprite-pack-1-64944)
-- Dynamic Space Background Lite by DinV Studio (https://assetstore.unity.com/packages/2d/textures-materials/dynamic-space-background-lite-104606)
+- [Galaxia 2D Space Shooter Sprite Pack #1 by Josh Marshall](https://assetstore.unity.com/packages/2d/textures-materials/galaxia-2d-space-shooter-sprite-pack-1-64944)
+- [Dynamic Space Background Lite by DinV Studio](https://assetstore.unity.com/packages/2d/textures-materials/dynamic-space-background-lite-104606)
 
