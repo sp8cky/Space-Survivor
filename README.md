@@ -21,7 +21,7 @@ This project is a simple implementation of the classic arcade game Space Invader
 
 
 ### Project status
-- Still in progress
+- Currently paused
 
 ### Future implementations
 - new Enemy-Types, attacks
